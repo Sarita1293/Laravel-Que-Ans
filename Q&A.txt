@@ -1,0 +1,304 @@
+
+
+1)what is composer?
+A: Composer is a package management tool in Laravel. 
+   Its main purpose is to make it easier to manage the libraries in your project by installing and updating them automatically.
+
+Q) What are available databases supported by Laravel?
+A: MySQL, Postgres, SQLite, and SQL Server.
+
+Q)What is an artisan?
+A: artisan is a command line interface which provides developing and managing laravel applications.
+   we can view list of artisan commands by running:  php astisan list
+
+Q) How to put Laravel applications in maintenance mode? 
+A:enable maintenance mode: php artisan down
+  disable maintenance mode: php artisan up
+
+Q) What are the default route files in Laravel?
+A:Route files are located in the routes directory.
+  web.php, api.php
+  web.php :  defines routes for your web interface. they are assigned to the web middleware group, providing features like session state and CSRF protection
+  api.php :  api.php are stateless and set in the API middleware group.
+
+Q) What are migrations in Laravel?
+A: Migration is a feature of Laravel that allows you to modify and share the application's database schema. 
+   Migrations are like version control for your database, allowing your team to modify and share the application's database schema.
+   
+Q) What are seeders in Laravel?
+A: seeding feature allows you to insert data into your database.
+   db:seed Artisan
+
+Q) What are the factories in Laravel?
+A: factory feature that allows you to build fake data for your models.
+   It is beneficial for testing  to see your code in action before any accurate user data comes in.
+
+Q) How to enable query log in laravel?
+A: Our first step should be
+	DB::connection()->enableQueryLog();
+	After our query, you should place it
+	$querieslog = DB::getQueryLog();
+	After that, you should place it
+	dd($querieslog)
+
+Q) What is Middleware in Laravel?
+A: Middleware in laravel is a platform that works as a bridge between the request and the response.
+   provide the mechanism for investigating HTTP requests entering into your application.
+   ensures that the user of your particular application is authenticated. 
+   If they find that the user is not authenticated, it will redirect the user to the main login page of the application.
+   
+Q) What is a Service container?
+A: service container is used as a registry to keep track of all the classes in use within your application.
+
+Q) What is Auth? How is it used?
+A: Laravel Auth is an in-built functionality provided by Laravel to identify the user credentials with the database.
+   It takes input parameters like username and password for user identification. If the settings match, then the user is said to be authenticated.
+   If you want to authenticate your laravel application, then you can use the auth function.
+
+Q) What is composer lock in laravel?
+A: After you run composer install in your project directory, the Composer will generate a composer.lock file. 
+   It will record all the dependencies and sub-dependencies installed by the composer.json.
+
+Q) What is Routing?
+A: The route is a method of creating the request URL of the application.
+  
+Q) What are relationships in Laravel?
+A: relationships are defined as methods in Eloquent model classes. 
+   	One To One relationship.
+	One To Many relationships.
+	Many To Many relationships.
+	Has Many Through relationships.
+	Polymorphic relationships.
+	Many To Many Polymorphic relationships.
+
+Q) What is Eloquent in Laravel?
+A: ORM (Object Relational Mapper)called Eloquent, which is used to communicate with the database.
+
+Q) What is throttling and how to implement it in Laravel?
+A: Throttling is a way to imit requests from a particular IP. 
+    You can implement throttling as below:
+    Route::middleware('auth:api', 'throttle:60,1')->group(function () {
+    Route::get('/user', function () {
+        //
+    });
+});
+
+Q) What are facades?
+A: A facade is a way to access classes available in the application's service container.
+   The service container holds all of your application's business logic, and facades provide a "static" interface to those classes.
+   You can see them in any controller or view file. 
+   ou can access a facade as mentioned below
+
+	use Illuminate\Support\Facades\Cache;
+	use Illuminate\Support\Facades\Route;
+	Route::get('/cache', function () {
+   	return Cache::get('key');
+	});
+Q) Why is Laravel used?
+A: Using Laravel, you can simplify the development process.
+   It simplifies the regular tasks such as authentication, routing, and sessions. 
+
+Q) What is namespace in Laravel?
+A: 
+
+2)how to upgrade or downgrade any package version ? do we need any command?
+A:
+
+3)can we put view file /balde.php file anywhere in any folder and can access it?
+A:
+
+4)app/routes/api.php -> why we use api.php?
+A:
+
+5)why we dont created view from command line?
+A:
+
+6)can we directly call component in web.php?
+A:
+
+7)Can we use php tag in blade.php file?
+A:
+
+8)how to include any js library in common file?
+A:
+
+9) why we use csrf and what is it?
+A:
+
+10)how to get input value back and show in input  after submitting wrong value?
+A:
+
+11)can we apply middleware to controller also?
+A:
+
+12)can we apply 2 middleware on one group?
+A:
+
+13)can we apply multiple middleware on one view in route middleware type?
+A:
+
+14)Can we connect other db like SQL,mongodb,Oracle just like mysql? If yes or no then how?
+A:
+
+15)Can we fetch 2 tables data with one model? yes/no ?? how?
+A:
+
+16)here we used the api in controller but can we use this api in model/somewhere else? yes/no? Why?
+A:
+
+17)can we handle multiple methods with single request ?? like can we add delete get post all here at once?
+A:
+
+18)how can we change file name dynamically?
+A:
+
+19)if we miss any keys from any file en.hi.ja, will it give any error or run properly?
+A:
+
+20)how to strictly fetch data of specific table?
+A:
+
+21)how to insert data into two tables simultaneously?
+A:
+
+22)how to show the message that record deleted successfully? And how can we delete multiple records at once?
+A:
+
+23)check if a specific id’s record is present or not , if yes then delete it else insert that record in table.
+A:
+
+24)can we do min and max at the same time?
+A:
+
+25)how to use left join and right join in laravel?
+A:
+
+26) when we migrate the tables and after that we realize that we forget something to do then how will we rollback or correct those things?
+A:
+
+27)how to migrate 2 or 3 files at once?
+A:
+
+28)how to seed multiple tables at once?
+A:
+
+29)how to customize component using stub? In which file we will change to customize component?
+A:
+
+30)how can we show any message on under construction page.ex. We will be right back?
+A:
+
+31)can we downgrade laravel or functions also?
+A:
+
+32)how to use 3 tables in one to many relations?
+A:
+
+33)can we combine previous methods of string with fluent string at the same time?
+A:
+
+34)can we bind two tables with one route and getdata from 2 tables?
+A:
+
+35)why we route api in api.php not in web.php. Can we use api in web.php? yes/no?? why?
+A:
+
+36)can we pass names as parameters? yes/no, how/ why?
+A:
+
+37)why we use post api to save data why not get?
+A:
+
+38)we are using the put method to update, can’t we use the post method to update?
+A:
+
+39)how to delete multiple records at once using delete method?
+A:
+
+40)if we search for xyzsrr like name it will return a blank array []. So how can we show a message instead of blank array?
+A:
+
+41)can we use resources with normal html form or view?
+A:
+
+42)what is diff between jwt, sanctum and passport?? Which is better and when to use?
+A:
+
+43)how to make views using custom commands?
+A:
+
+44)can we join on different database tables?
+A:
+
+45)what is facades in laravel? why we use it? 
+A:
+
+46)composer? command to download new liabrary using composer?
+A:
+
+47)what is migration? how to migrate a tables data ?
+A:
+
+48)what is state container?
+A:
+
+49)how many types of relations in laravel?
+A:
+
+50)what is middle ware? why we use it?
+A:
+
+51)what is laravel?features of laravel?
+            ->Laravel is a PHP framework that uses the MVC architecture.
+            ->Framework: It is the collection of methods, classes, or files that the programmer uses, and they can also extend its functionality by using their code.
+            ->Architecture: It is the specific design pattern that the framework follows. Laravel is following the MVC architecture.
+            ->MVC is divided into three letters shown below:
+            ->M: 'M' stands for Model. A model is a class that deals with a database.
+            ->V: 'V' stands for View. A view is a class that deals with an HTML. Everything that we can see on the application in the browser is the view or the representation.
+            ->C: 'C' stands for Controller. A controller is the middle-man that deals with both model and view. A controller is the class that retrieves the data from the model and sends the data to the view class.
+
+52)Features of laravel are: 
+            1)Authentication
+            ->Laravel contains an inbuilt authentication system, you only need to configure models, views, and controllers to make the application work.
+            2)Innovative Template Engine
+            ->Laravel provides an innovative template engine which allows the developers to create the dynamic website.
+            -> The available widgets in Laravel can be used to create solid structures for an application.
+            3)Effective ORM
+            ->Laravel contains an inbuilt ORM with easy PHP Active Record implementation.
+            ->An effective ORM allows the developers to query the database tables by using the simple PHP syntax without writing any SQL code. 
+            ->It provides easy integration between the developers and database tables by giving each of the tables with their corresponding models.
+            4)MVC Architecture Support
+            5)Secure Migration System
+            ->Laravel framework can expand the database without allowing the developers to put much effort every time to make changes, and the migration process of Laravel is very secure and full-proof.
+            ->In the whole process, php code is used rather than SQL code.
+            6)Unique Unit-testing
+            ->Laravel provides a unique unit-testing. Laravel framework can run several test cases to check whether the changes harm the web app or not. In Laravel, developers can also write the test cases in their own code.
+            7)Intact Security
+            ->Laravel has an inbuilt web application security, i.e., it itself takes care of the security of an application. It uses "Bcrypt Hashing Algorithm" to generate the salted password means that the password is saved as an encrypted password in a database, not in the form of a plain text.
+            8)Libraries and Modular
+            ->Laravel is very popular as some Object-oriented libraries, and pre-installed libraries are added in this framework, these pre-installed libraries are not added in other php frameworks. One of the most popular libraries is an authentication library that contains some useful features such as password reset, monitoring active users, Bcrypt hashing, and CSRF protection. This framework is divided into several modules that follow the php principles allowing the developers to build responsive and modular apps
+            9)Artisan
+            ->Laravel framework provides a built-in tool for a command-line known as Artisan that performs the repetitive programming tasks that do not allow the php developers to perform manually. These artisans can also be used to create the skeleton code, database structure, and their migration, so it makes it easy to manage the database of the system. It also generates the MVC files through the command line. Artisan also allows the developers to create their own commands.
+
+53) what is migration?
+            ->Laravel Migration is an essential feature in Laravel that allows you to create a table in your database. 
+            ->It allows you to modify and share the application's database schema.
+            ->You can modify the table by adding a new column or deleting an existing column.
+            ->Laravel Migration allows you to add a new column or delete the records in your database without deleting the records that are already present.
+
+54)types of migration?
+            ->
+            ->
+            ->
+            ->
+
+55)what is seeders?
+
+
+
+56)how to secure your application? what precuations you have taken? 
+57)what is middleware and its types?
+
+
+
+
